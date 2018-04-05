@@ -1,0 +1,72 @@
+<!--
+  Generated template for the AddEventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add New Event</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="eventForm" (ngSubmit)="addEvent()">
+    <ion-grid>
+      <ion-item-divider color="light">Enter the details</ion-item-divider>
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Title</ion-label>
+              <ion-input type="text" formControlName="title"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div>
+        <ion-row wrap>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>From</ion-label>
+              <ion-datetime formControlName="from" displayFormat="MMMM D, YYYY h:mm A" pickerFormat="MMM D YYYY h:mm A"></ion-datetime>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>To</ion-label>
+              <ion-datetime formControlName="to" displayFormat="MMMM D, YYYY h:mm A" pickerFormat="MMM D YYYY h:mm A"></ion-datetime>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Venue</ion-label>
+              <ion-input type="text" formControlName="venue"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Description</ion-label>
+              <ion-textarea formControlName="description"></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+      <button ion-button full type="submit">Add Event</button>
+    </ion-grid>
+  </form>
+</ion-content>
